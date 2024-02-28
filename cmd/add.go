@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"fmt"
+    //"fmt"
 
 	"github.com/spf13/cobra"
     "github.com/afro-juliano/cli-app/todo"
@@ -15,11 +15,11 @@ var addCmd = &cobra.Command{
 }
 
 func addRun(cmd *cobra.Command, args []string) {
-    items := []todo.Item{}
+    var items = []todo.Item{}
     for _, x := range args {
         items = append(items, todo.Item{Text:x})
     }
-    fmt.Println(items)
+    todo.SaveItems("x", items)
 }
 
 func init() {
